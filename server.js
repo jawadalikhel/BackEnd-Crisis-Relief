@@ -29,14 +29,14 @@ app.use(cors(corsOptions));
 //95f432cefc027eaa7c0c7881e0edd2e7
 
 // Require the controller after the middleware
-const crisisController = require('./controllers/restarauntController');
+const crisisController = require('./controllers/crisisController');
 const authController  = require('./controllers/authController');
 
 // app.use('/api/v1/restaraunt', restarauntController);
 // app.use('/auth', authController);
 
 app.use('/api/v1/crisis', crisisController);
-app.use('/auth', authController);
+// app.use('/auth', authController);
 
 
 
