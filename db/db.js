@@ -1,18 +1,19 @@
-// This is where we will set up our db connection
 const mongoose = require('mongoose');
 
-// food is the name of our database
-// that is automatically created
-mongoose.connect('mongodb://localhost/crisis0');
+const connectionString = 'mongodb://localhost/crisis0';
+
+mongoose.connect(connectionString, { newUrlParser: true });
+
 
 mongoose.connection.on('connected', () => {
   console.log('Mongoose is connected')
 });
 
 mongoose.connection.on('error', (err) => {
-  console.log(err, ' mongoose failed to connect')
+  console.log(err, 'Mongoose failed to connect')
 });
 
-mongoose.connection.on('disconncted', () => {
+
+mongoose.connection.on('disconnected', () => {
   console.log('Mongoose is disconnected')
 });
