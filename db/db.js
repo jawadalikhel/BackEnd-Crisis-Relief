@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
 
-const connectionString = 'mongodb://localhost/crisis0';
-
-mongoose.connect(connectionString, { newUrlParser: true });
-
+mongoose.connect('mongodb://localhost/crisis');
 
 mongoose.connection.on('connected', () => {
   console.log('Mongoose is connected')

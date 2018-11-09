@@ -20,23 +20,22 @@ app.use(bodyParser.json());
 
 const corsOptions = {
   origin: 'http://localhost:3000',
-  credentials: true, // This allows the session cookie to be sent back and forth
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  credentials: true,
+  optionsSuccessStatus: 200,
 }
 app.use(cors(corsOptions));
 
 
-//95f432cefc027eaa7c0c7881e0edd2e7
 
 // Require the controller after the middleware
-const crisisController = require('./controllers/crisisController');
+const goalsController = require('./controllers/goalsController');
 const authController  = require('./controllers/authController');
 
 // app.use('/api/v1/restaraunt', restarauntController);
 // app.use('/auth', authController);
 
-app.use('/api/v1/crisis', crisisController);
-// app.use('/auth', authController);
+app.use('/api/v1/goals', goalsController);
+// app.use('/auth/login', authController);
 
 
 
